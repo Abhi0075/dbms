@@ -30,44 +30,44 @@ TEST2  INT,
      FINALIA INT,FOREIGN KEY(USN)REFERENCES STUDENT(USN), FOREIGN KEY(SUBCODE) REFERENCES SUBJECT(SUBCODE), FOREIGN KEY(SSID) REFERENCES SEMSEC(SSID));
      
 insert into student values 
-('1cg15cs001','Abhi','tumkur','9875698410','m'),
-('1cg15cs002','amulya','gubbi','8896557412','f'),
-('1cg16me063','chetan','nittur','7894759458','m'),
-('1cg14ec055','raghavi','sspuram','8896557412','f'),
-('1cg15ee065','sanjay','bangalore','8896557412','m');
+('01jst15cs001','Abhi','tumkur','9875698410','m'),
+('01jst15cs002','amulya','gubbi','8896557412','f'),
+('01jst16me063','chetan','nittur','7894759458','m'),
+('01jst14ec055','raghavi','sspuram','8896557412','f'),
+('01jst15ee065','sanjay','bangalore','8896557412','m');
 
 insert into semsec values 
 ('5A', 5 ,'A'),
 ('3B',3,'B'),
-('7A',7 ,'A'),
+('8A',8 ,'A'),
 ('2C',2,'C'),
 ('4B',4 ,'B'),
 ('4C',4 ,'C');
 
 
 insert into class values
-('1cg15cs001','5A'),
-('1cg15cs002','5A'),
-('1cg16me063','3B'),
-('1cg14ec055','7A'),
-('1cg15ee065','3B'),
-('1cg15ee065','4c'),
-('1cg15cs002',' 4c');
+('01jst15cs001','5A'),
+('01jst15cs002','5A'),
+('01jst16me063','3B'),
+('01jst14ec055','8A'),
+('01jst15ee065','3B'),
+('01jst15ee065','4C'),
+('01jst15cs002','4C');
 
 insert into subject values
 ('15cs53','dbms',5,4),
 ('15cs33','ds',3,4),
 ('15cs34','co',3,4),
 ('15cs185','dba',5,2),
-('15cs71','oomd',7,4);
+('15cs71','oomd',8,4);
 
 insert into iamarks values
-('1cg15cs001','15cs53','5A',18,19,15,19),
-('1cg15cs002','15cs53','5A',15,16,14,16),
-('1cg16me063','15cs33','3B',10,15,16,16),
-('1cg14ec055','15cs71','7A',18,20,21,21),
-('1cg15ee065','15cs33','3B',16,20,17,19),
-('1cg15ee065','15cs53','4C',19,20,18,20);
+('01jst15cs001','15cs53','5A',18,19,15,19),
+('01jst15cs002','15cs53','5A',15,16,14,16),
+('01jst16me063','15cs33','3B',10,15,16,16),
+('01jst14ec055','15cs71','8A',18,20,21,21),
+('01jst15ee065','15cs33','3B',16,20,17,19),
+('01jst15ee065','15cs53','4C',19,20,18,20);
 
 /////////////////////////////////////////
 
@@ -86,7 +86,7 @@ AND SS.SSID=C.SSID GROUP BY SS.SEM,SS.SEC,S.GENDER ORDER BY SEM;
 CREATE VIEW STUDENT_TEST1_MARKS_VIEW
      AS SELECT TEST1, SUBCODE
      FROM IAMARKS
-     WHERE USN='1cg15ee065';
+     WHERE USN='01jst15ee065';
      
 SELECT * FROM STUDENT_TEST1_MARKS_VIEW; 
 
@@ -109,6 +109,6 @@ SELECT S.USN,S.SNAME,S.ADDRESS,S.PHONE,S.GENDER, IA.SUBCODE,
      WHERE S.USN = IA.USN AND
     SS.SSID = IA.SSID AND
      SUB.SUBCODE = IA.SUBCODE AND
-     SUB.SEM = 7;
+     SUB.SEM = 8;
 
 //////////////////////////////////////////////////////////////////////
